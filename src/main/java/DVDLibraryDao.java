@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public interface DVDLibraryDao {
 
-    DVD addDVD(String myTitle, String myDate, double mpaaRate, String director, String studioName, String user);
+    DVD addDVD(String myTitle, String myDate, String mpaaRate, String director, String studioName, String user) throws DVDLibraryDaoException;
 
-    DVD removeDVD(DVD d);
+    DVD removeDVD(DVD d) throws DVDLibraryDaoException;
 
-    DVD editDVD(DVD d, int field, String data);
+    DVD editDVD(DVD d, int field, String data) throws DVDLibraryDaoException;
 
-    ArrayList<DVD> listDVDS();
+    ArrayList<DVD> listDVDS() throws DVDLibraryDaoException;
 
-    DVD searchDVD(String title);
+    DVD searchDVD(String title) throws DVDLibraryDaoException;
 
 }

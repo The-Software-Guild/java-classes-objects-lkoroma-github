@@ -2,12 +2,12 @@ public class DVD {
 
     private String title;
     private String date;
-    private double mpaaRating;
+    private String mpaaRating;
     private String directorName;
     private String studio;
     private String userRating;
 
-    public DVD(String myTitle, String myDate, double mpaaRate, String director, String studioName, String user){
+    public DVD(String myTitle, String myDate, String mpaaRate, String director, String studioName, String user){
         this.title= myTitle;
         this.date = myDate;
         this.mpaaRating = mpaaRate;
@@ -24,11 +24,11 @@ public class DVD {
         this.date = date;
     }
 
-    public double getMpaaRating() {
+    public String getMpaaRating() {
         return mpaaRating;
     }
 
-    public void setMpaaRating(double mpaaRating) {
+    public void setMpaaRating(String mpaaRating) {
         this.mpaaRating = mpaaRating;
     }
 

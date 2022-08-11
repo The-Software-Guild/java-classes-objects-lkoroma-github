@@ -23,7 +23,7 @@ public class DVDLibraryView {
     public DVD getNewDVDInfo(){
         String title = io.readString("\tPlease enter the title of the DVD");
         String date = io.readString("\tPlease enter the release date of the DVD");
-        double mpaaRate = io.readDouble("\tPlease enter the MPAA rating of the DVD");
+        String mpaaRate = io.readString("\tPlease enter the MPAA rating of the DVD");
         String director = io.readString("\tPlease enter the director's name");
         String studio = io.readString("\tPlease enter the studio name");
         String userRate = io.readString("\tPlease enter the user rating of the DVD");
@@ -36,7 +36,7 @@ public class DVDLibraryView {
             return;
         }
         for (DVD d: dvds){
-            String dvd = String.format("\tTitle: %s%n\tRelease Date: %s%n\tMPAA Rating: %.2f%n\tDirector: %s, Studio %s%n\t" +
+            String dvd = String.format("\tTitle: %s%n\tRelease Date: %s%n\tMPAA Rating: %s%n\tDirector: %s, Studio %s%n\t" +
                     "User Rating: %s%n", d.getTitle(), d.getDate(), d.getMpaaRating(), d.getDirectorName(),
                     d.getStudio(), d.getUserRating());
             io.print(dvd);
@@ -61,7 +61,7 @@ public class DVDLibraryView {
     }
 
     public void showDVDInfo(DVD d){
-        io.print(String.format("\tTitle: %s%n\tRelease Date: %s%n\tMPAA Rating: %.2f%n\tDirector: %s, Studio %s%n\t" +
+        io.print(String.format("\tTitle: %s%n\tRelease Date: %s%n\tMPAA Rating: %s%n\tDirector: %s, Studio %s%n\t" +
                         "User Rating: %s%n", d.getTitle(), d.getDate(), d.getMpaaRating(), d.getDirectorName(),
                 d.getStudio(), d.getUserRating()));
     }

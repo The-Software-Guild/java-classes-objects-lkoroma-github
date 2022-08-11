@@ -9,7 +9,7 @@ public class DVDLibraryController {
         this.model = myModel;
     }
 
-    public void run(){
+    public void run() throws DVDLibraryDaoException {
         boolean running = true;
 
         while (running){
@@ -32,14 +32,14 @@ public class DVDLibraryController {
         return view.printMenuAndGetChoice();
     }
 
-    public void addDVDToCollection(){
+    public void addDVDToCollection() throws DVDLibraryDaoException {
         view.displayAddDVDMenu();
         DVD d = view.getNewDVDInfo();
         model.addDVD(d.getTitle(), d.getDate(), d.getMpaaRating(),d.getDirectorName(),d.getStudio(),d.getUserRating());
         view.printCreateSuccess();
     }
 
-    public void removeDVDFromCollection(){
+    public void removeDVDFromCollection() throws DVDLibraryDaoException {
         view.displayRemoveDVDMenu();
         String title = view.getDVDTitle("remove");
         DVD dvd = model.searchDVD(title);
@@ -47,7 +47,7 @@ public class DVDLibraryController {
         view.printRemoveSuccess();
     }
 
-    public void editDVDInCollection(){
+    public void editDVDInCollection() throws DVDLibraryDaoException {
         view.displayEditDVDMenu();
         String title = view.getDVDTitle("edit");
         DVD dvd = model.searchDVD(title);
@@ -57,12 +57,12 @@ public class DVDLibraryController {
         view.printEditSuccess();
     }
 
-    public void listAllDVDSInCollection(){
+    public void listAllDVDSInCollection() throws DVDLibraryDaoException {
         view.displayListDVDsMenu();
         view.showDVDCollection(model.listDVDS());
     }
 
-    public void searchDVDCollection(){
+    public void searchDVDCollection() throws DVDLibraryDaoException {
         view.displayListADVDMenu();
         String title = view.getDVDTitle("view");
         DVD d = model.searchDVD(title);
