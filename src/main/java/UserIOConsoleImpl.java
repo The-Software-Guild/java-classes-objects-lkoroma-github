@@ -24,7 +24,7 @@ public class UserIOConsoleImpl implements  UserIO{
     @Override
     public int readInt(String prompt, int min, int max) {
         Scanner scan = new Scanner(System.in);
-        System.out.printf("Please enter an integer between %d and %d%n",min, max);
+        System.out.printf(prompt,min, max);
         int num = Integer.parseInt(scan.nextLine());
         while (num<min || max>100){
             System.out.println("Error not between the correct range.\nPlease enter an integer between 0 and 100");
@@ -43,7 +43,7 @@ public class UserIOConsoleImpl implements  UserIO{
     @Override
     public double readDouble(String prompt, double min, double max) {
         Scanner scan = new Scanner(System.in);
-        System.out.printf("Please enter an integer between %f and %f%n",min, max);
+        System.out.printf(prompt,min, max);
         double num = Double.parseDouble(scan.nextLine());
         while (num<min || max>100){
             System.out.println("Error not between the correct range.\nPlease enter a float between 0 and 100");
@@ -62,7 +62,7 @@ public class UserIOConsoleImpl implements  UserIO{
     @Override
     public float readFloat(String prompt, float min, float max) {
         Scanner scan = new Scanner(System.in);
-        System.out.printf("Please enter a float between %f and %f%n",min, max);
+        System.out.printf(prompt,min, max);
         float num = Float.parseFloat(scan.nextLine());
         while (num<min || max>100){
             System.out.println("Error not between the correct range.\nPlease enter a float between 0 and 100");
@@ -81,7 +81,7 @@ public class UserIOConsoleImpl implements  UserIO{
     @Override
     public long readLong(String prompt, long min, long max) {
         Scanner scan = new Scanner(System.in);
-        System.out.printf("Please enter a long between %d and %d%n",min, max);
+        System.out.printf(prompt,min, max);
         long num = Long.parseLong(scan.nextLine());
         while (num<min || max>100){
             System.out.println("Error not between the correct range.\nPlease enter a long between 0 and 100");
