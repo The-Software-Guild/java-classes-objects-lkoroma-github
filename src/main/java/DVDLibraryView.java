@@ -8,6 +8,7 @@ public class DVDLibraryView {
         this.io = myIo;
     }
 
+    //prints menu and returns user choice
     public int printMenuAndGetChoice(){
         io.print("Main Menu");
         io.print("\t1. Add DVD to the collection");
@@ -20,6 +21,7 @@ public class DVDLibraryView {
         return io.readInt("Please select from the above choices.",1, 9);
     }
 
+    //grabs info for a new dvd from the user
     public DVD getNewDVDInfo(){
         String title = io.readString("\tPlease enter the title of the DVD");
         String date = io.readString("\tPlease enter the release date of the DVD");
@@ -30,6 +32,7 @@ public class DVDLibraryView {
         return new DVD(title, date, mpaaRate, director,studio, userRate);
     }
 
+    //displays information for dvds
     public void showDVDCollection(ArrayList<DVD> dvds){
         if (dvds.size()==0){
             io.print("\tNo DVDs Found");
@@ -42,10 +45,13 @@ public class DVDLibraryView {
             io.print(dvd);
         }
     }
+
+    //gets the name of a dvd title from the user
     public String getDVDTitle(String s){
         return io.readString(String.format("\tEnter the name of the DVD you want to %s", s));
     }
 
+    //gets the field the user wants to edit
     public int getEditField(){
         io.print("\t1 - Title");
         io.print("\t2 - Release Date");
@@ -56,16 +62,20 @@ public class DVDLibraryView {
         return io.readInt("What option do you want to edit?", 1, 6);
     }
 
+    //gets the information the user wants to edit in
     public String getEditData(){
         return io.readString("\tEnter the data to edit into the DVD record");
     }
 
+    //shows information for a single dvd
     public void showDVDInfo(DVD d){
         io.print(String.format("\tTitle: %s%n\tRelease Date: %s%n\tMPAA Rating: %s%n\tDirector: %s, Studio %s%n\t" +
                         "User Rating: %s%n", d.getTitle(), d.getDate(), d.getMpaaRating(), d.getDirectorName(),
                 d.getStudio(), d.getUserRating()));
     }
 
+
+    //menus for different options
     public void displayAddDVDMenu(){
         io.print("ADD DVD MENU");
     }
@@ -86,6 +96,8 @@ public class DVDLibraryView {
         io.print("DVD LOOKUP MENU");
 
     }
+
+    //success messages for different methods
     public void printCreateSuccess(){
         io.print("\tDVD added to collection");
     }

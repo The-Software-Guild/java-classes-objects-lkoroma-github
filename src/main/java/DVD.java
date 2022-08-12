@@ -7,6 +7,7 @@ public class DVD {
     private String studio;
     private String userRating;
 
+    //DVD DTO
     public DVD(String myTitle, String myDate, String mpaaRate, String director, String studioName, String user){
         this.title= myTitle;
         this.date = myDate;

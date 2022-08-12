@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//user I/O commands
 public class UserIOConsoleImpl implements  UserIO{
 
     @Override

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+//Model interface
 public interface DVDLibraryDao {
 
     DVD addDVD(String myTitle, String myDate, String mpaaRate, String director, String studioName, String user) throws DVDLibraryDaoException;

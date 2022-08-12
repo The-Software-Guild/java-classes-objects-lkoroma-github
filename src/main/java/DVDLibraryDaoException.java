@@ -4,6 +4,8 @@ public class DVDLibraryDaoException extends Exception{
         super(message);
     }
 
+
+    //custom exception for our application
     public DVDLibraryDaoException(String message, Throwable cause){
         super(message, cause);
     }

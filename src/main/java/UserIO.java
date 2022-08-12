@@ -1,3 +1,4 @@
+//User I/O command interface
 public interface UserIO {
     void print(String msg);
 
